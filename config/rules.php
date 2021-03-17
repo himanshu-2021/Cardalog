@@ -98,7 +98,6 @@ return [
             //new work
             'send-message' => [
                 'user_id' => ['bail', 'required', 'exists:users,id'],
-                'to' => ['bail', 'required'],
                 'message'=>['bail','required'],
                 'chat_type' => ['bail', 'required'],
             ],
@@ -108,6 +107,13 @@ return [
                 'group_icon'=>['bail','mimes:jpg,jpeg,png,bmp','required'],
                 //'group_creater_user_id' => ['bail', 'required', 'numeric'],
                 'master'=>['bail','required', 'numeric'],
+            ],
+            'gift-diamonds' => [
+                'user_id' => ['bail','required', 'exists:users,id'],
+               // 'reciever_id' => ['bail','required', 'exists:users,id'],
+                'type' => ['bail','string', 'required','min:1','max:255'],
+                //'image'=>['bail','mimes:jpg,jpeg,png,bmp','required'],
+                'quantity' => ['bail', 'required', 'numeric','min:100','max:50000'],
             ],
 
 

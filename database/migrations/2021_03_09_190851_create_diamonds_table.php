@@ -17,6 +17,7 @@ class CreateDiamondsTable extends Migration
             $table->id();
             $table->string('status')->nullable()->comment('credit,debit');
             $table->string('diamonds_qty')->nullable()->comment('no. of diamonds');
+            $table->string('diamonds_images')->nullable()->comment('image on the basis of entered/selected diamonds number');
             $table->string('type')->nullable()->comment('purchase,transfer');
             $table->string('sender_id')->comment('always have user id');
             $table->string('reciever_id')->nullable()->comment('whoever recieve the diamonds');

@@ -69,6 +69,7 @@ Route::middleware('auth:api')->group( function () {
          /*--User Post Conversation Route--*/
          Route::prefix('message')->group(function(){
             Route::post('/create', [UserMessage::class,'sendMessage'])->name('user.message.create');
+            Route::post('/gift-diamonds', [UserMessage::class,'giftDiamonds'])->name('user.message.gift-diamons');
         });
         Route::prefix('group')->group(function(){
             Route::post('/create', [UserMessage::class,'createGroup'])->name('user.group.create');
