@@ -110,10 +110,11 @@ return [
             ],
             'gift-diamonds' => [
                 'user_id' => ['bail','required', 'exists:users,id'],
-               // 'reciever_id' => ['bail','required', 'exists:users,id'],
                 'type' => ['bail','string', 'required','min:1','max:255'],
-                //'image'=>['bail','mimes:jpg,jpeg,png,bmp','required'],
                 'quantity' => ['bail', 'required', 'numeric','min:100','max:50000'],
+            ],
+            'user'=>[
+                'user_id'=>['bail','required','exists:users,id'],
             ],
 
 

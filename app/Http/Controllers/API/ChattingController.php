@@ -192,4 +192,17 @@ class ChattingController extends Controller
             'message'=>'Failed']);
         }
     }
+    public function profileDetails(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->ruleSet['user']);
+        if($validator->fails()){
+            return response()->json(['status'=>Statuscodes::InvalidRequestFormat,'message'=>$validator->errors()->first()]);
+        }
+        $get_user=Users::where(['id'=>$request->user_id,'account_status'=>1])->select('avatar','name','nick_name','phone_code','mobile','email','diamonds')->first();
+        if(!empty($get_user)){
+
+        }else{
+
+        }
+    }
 }
